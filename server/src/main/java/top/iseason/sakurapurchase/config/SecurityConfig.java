@@ -39,6 +39,7 @@ public class SecurityConfig {
                 .and()
                 //防止跨域攻击
                 .csrf()
+                .ignoringAntMatchers("/api/pay/notify")
                 .csrfTokenRepository(CookieCsrfTokenRepository.withHttpOnlyFalse());
 
         return http.build();
